@@ -86,7 +86,7 @@ const Login = () => {
     setIsSignIn(!isSignIn);
   };
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
       <div className="fixed inset-0 z-[-1]">
         <img
@@ -96,10 +96,10 @@ const Login = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
       </div>
-      <div className="relative pt-[1px]">
+      <div className="flex-grow flex items-center justify-center py-24 md:py-32 px-4 shadow-inner">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="relative md:absolute p-8 md:p-12 bg-black w-[90%] sm:w-[60%] md:w-[50%] lg:w-[30%] my-24 md:my-36 mx-auto right-0 left-0 text-white bg-opacity-80 rounded-xl shadow-2xl border border-gray-800 text-sm md:text-base z-10"
+          className="w-full max-w-[450px] p-8 md:p-16 bg-black text-white bg-opacity-80 rounded-xl shadow-2xl border border-gray-800 text-sm md:text-base z-10"
         >
           <h1 className="text-2xl md:text-3xl font-bold py-2 md:py-4">
             {isSignIn ? "Sign In" : "Sign Up"}
@@ -143,9 +143,7 @@ const Login = () => {
           </p>
         </form>
       </div>
-      <div className="relative md:mt-[60vh]">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };
