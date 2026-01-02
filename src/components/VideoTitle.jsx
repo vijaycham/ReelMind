@@ -8,9 +8,9 @@ const VideoTitle = ({ title, overview }) => {
       </h1>
       <div className="hidden lg:block py-6">
         <p className="text-lg w-1/3 h-28 overflow-y-scroll scrollbar-hide text-gray-200 leading-relaxed">
-          {overview}
-        </p>
-      </div>
+            {overview}
+          </p>
+        </div>
       {/* Tablet specific description - scrollable but compact (3 lines) */}
       <div className="hidden md:block lg:hidden py-4">
         <p className="text-sm w-3/4 md:w-1/2 h-16 md:h-20 overflow-y-scroll scrollbar-hide text-gray-200 leading-snug">

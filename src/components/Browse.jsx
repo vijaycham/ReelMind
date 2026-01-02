@@ -8,6 +8,7 @@ import useHorrorMovies from "../hooks/useHorrorMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import GptSearch from "./GptSearch";
+import Footer from "./Footer";
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   useNowPlayingMovies();
@@ -27,6 +28,7 @@ const Browse = () => {
           <SecondaryContainer />
         </>
       )}
+      <Footer />
     </div>
   );
 };

@@ -60,11 +60,17 @@ const Header = () => {
       {user && (
         <div className="flex p-1 md:p-2 items-center">
           <button className="py-1 md:py-2 text-white bg-purple-800 px-2 md:px-4 rounded-lg text-xs md:text-base mr-2" onClick={handleGptSearchClick}>GPT Search</button>
-          <img
-            className="hidden md:block w-10 md:w-12 h-10 md:h-12 m-2 rounded-md"
-            alt="usericon"
-            src={user?.photoURL}
-          />
+          {user?.photoURL ? (
+            <img
+              className="hidden md:block w-10 md:w-12 h-10 md:h-12 m-2 rounded-md object-cover border border-white/20"
+              alt="usericon"
+              src={user?.photoURL}
+            />
+          ) : (
+            <div className="w-10 h-10 md:w-11 md:h-11 m-2 rounded-md bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg border border-white/20">
+              {user?.displayName ? user.displayName.charAt(0).toUpperCase() : user?.email?.charAt(0).toUpperCase() || "U"}
+            </div>
+          )}
           <button
             onClick={handleSignOut}
             className="p-1 md:p-2 font-bold bg-red-600 rounded-lg text-white bg-opacity-80 text-xs md:text-base"
