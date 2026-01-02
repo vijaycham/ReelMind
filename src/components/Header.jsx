@@ -47,27 +47,27 @@ const Header = () => {
   };
 
   return (
-    <div className="flex fixed px-12 py-4 bg-gradient-to-b from-black via-black/40 to-transparent w-full z-10 justify-between items-center transition-all duration-300 backdrop-blur-[2px]">
-      <div className="flex items-center gap-3 group cursor-pointer" onClick={() => navigate("/")}>
+    <div className="flex fixed px-4 md:px-12 py-2 md:py-4 bg-gradient-to-b from-black via-black/40 to-transparent w-full z-50 justify-between items-center transition-all duration-300 backdrop-blur-[2px]">
+      <div className="flex items-center gap-2 md:gap-3 group cursor-pointer" onClick={() => navigate("/")}>
         <div className="relative">
           <img
-            className="w-14 md:w-16 filter brightness-110 drop-shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-500 group-hover:rotate-[360deg]"
+            className="w-10 md:w-16 filter brightness-110 drop-shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-500 group-hover:rotate-[360deg]"
             src={LOGO}
             alt="logo"
           />
         </div>
       </div>
       {user && (
-        <div className="flex p-2 items-center ">
-          <button className="py-2 text-white bg-purple-800 px-4 rounded-lg" onClick={handleGptSearchClick}>GPT Search</button>
+        <div className="flex p-1 md:p-2 items-center">
+          <button className="py-1 md:py-2 text-white bg-purple-800 px-2 md:px-4 rounded-lg text-xs md:text-base mr-2" onClick={handleGptSearchClick}>GPT Search</button>
           <img
-            className="w-12 h-12 m-3 rounded-md"
+            className="hidden md:block w-10 md:w-12 h-10 md:h-12 m-2 rounded-md"
             alt="usericon"
             src={user?.photoURL}
           />
           <button
             onClick={handleSignOut}
-            className="p-3 my-8 font-bold bg-red-600 rounded-lg justify-between text-white bg-opacity-80"
+            className="p-1 md:p-2 font-bold bg-red-600 rounded-lg text-white bg-opacity-80 text-xs md:text-base"
           >
             Sign Out
           </button>
