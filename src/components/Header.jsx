@@ -3,6 +3,7 @@ import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleGptSearchView } from "../utils/gptSlice";
 import { useEffect } from "react";
 import { LOGO } from "../utils/constants";
 
@@ -42,8 +43,8 @@ const Header = () => {
   }, []);
 
   const handleGptSearchClick = () => {
-    
-  }
+    dispatch(toggleGptSearchView());
+  };
 
   return (
     <div className=" flex absolute px-8 py-2 bg-gradient-to-b from-black w-full z-10 justify-between items-center">

@@ -11,7 +11,7 @@ import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
-  const [isSignIn, setIsSignIn] = useState("signIn");
+  const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, SetErrorMessage] = useState(null);
 
   const dispatch = useDispatch();
