@@ -47,14 +47,15 @@ const Header = () => {
   };
 
   return (
-    <div className=" flex absolute px-8 py-2 bg-gradient-to-b from-black w-full z-10 justify-between items-center">
-      <div>
-        <img
-          className="w-48 cursor-pointer"
-          onClick={() => navigate("/")}
-          src={LOGO}
-          alt="logo"
-        />
+    <div className="flex fixed px-12 py-4 bg-gradient-to-b from-black via-black/40 to-transparent w-full z-10 justify-between items-center transition-all duration-300 backdrop-blur-[2px]">
+      <div className="flex items-center gap-3 group cursor-pointer" onClick={() => navigate("/")}>
+        <div className="relative">
+          <img
+            className="w-14 md:w-16 filter brightness-110 drop-shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-500 group-hover:rotate-[360deg]"
+            src={LOGO}
+            alt="logo"
+          />
+        </div>
       </div>
       {user && (
         <div className="flex p-2 items-center ">

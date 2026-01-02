@@ -87,12 +87,17 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/aa9edac4-a0e6-4f12-896e-32c518daec62/web/IN-en-20241223-TRIFECTA-perspective_1502c512-be5f-4f14-b21a-e3d75fe159ab_large.jpg" />
+      <div className="fixed inset-0 z-[-1]">
+        <img
+          className="h-full w-full object-cover"
+          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+          alt="background"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" absolute p-12 bg-black w-3/12 my-36 mx-auto right-0 left-0 text-white bg-opacity-85"
+        className="absolute p-12 bg-black w-full md:w-4/12 lg:w-3/12 my-36 mx-auto right-0 left-0 text-white bg-opacity-80 rounded-xl shadow-2xl border border-gray-800"
       >
         <h1 className="text-3xl font-bold py-4">
           {isSignIn ? "Sign In" : "Sign Up"}
@@ -102,20 +107,20 @@ const Login = () => {
             ref={name}
             type="text"
             placeholder="Full Name"
-            className="p-4 my-4 w-full bg-gray-700"
+            className="p-4 my-4 w-full bg-[#333] bg-opacity-70 rounded-md outline-none focus:ring-2 focus:ring-red-600 transition-all"
           />
         )}
         <input
           ref={email}
           type="text"
           placeholder="Email Address"
-          className="p-4 my-3 w-full bg-gray-700"
+          className="p-4 my-3 w-full bg-[#333] bg-opacity-70 rounded-md outline-none focus:ring-2 focus:ring-red-600 transition-all"
         />
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-4 my-3 w-full text-white bg-gray-700 "
+          className="p-4 my-3 w-full text-white bg-[#333] bg-opacity-70 rounded-md outline-none focus:ring-2 focus:ring-red-600 transition-all"
         />
         <p className="text-red-500">{errorMessage}</p>
         <button
@@ -125,7 +130,7 @@ const Login = () => {
           {isSignIn ? "Sign In" : "Sign Up"}
         </button>
         <p>
-          {isSignIn ? "New to Netflix?  " : "Already a Member. "}
+          {isSignIn ? "New to ReelMind?  " : "Already a Member. "}
 
           <span className="font-bold cursor-pointer" onClick={toggleSignInForm}>
             {isSignIn ? "Sign Up now" : "Sign In now"}

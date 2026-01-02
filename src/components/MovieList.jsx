@@ -8,7 +8,7 @@ const MovieList = ({ title, movies }) => {
   }
   console.log(movies);
   return (
-    <div className=" pt-4 space-y-2flex flex-col">
+    <div className="pt-4 space-y-2 flex flex-col">
       <h1 className="text-2xl font-bold px-4 text-white">{title}</h1>
       <div className=" flex mx-5 p-3 overflow-x-scroll scrollbar-hide">
         <div className="flex">

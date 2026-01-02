@@ -5,8 +5,8 @@ AI-powered movie discovery platform
 ReelMind is a modern movie discovery web application built with React (Vite), Firebase Authentication, Redux Toolkit, and TMDB APIs.
 The project was initially inspired by popular streaming UIs for learning purposes and later evolved into a feature-rich, scalable application with plans for AI-powered movie recommendations.
 
-🔗 Live Demo: https://reelmind-ai.web.app
- (update after redeploy)
+🔗 Live Demo: https://reel-mind-vijay.web.app
+
 
 🚀 Tech Stack
 
@@ -103,8 +103,4 @@ MovieList × N
 
 MovieCard components
 
-📌 Learning & Evolution Note
 
-This project started as a UI-inspired learning exercise and was progressively transformed into an original, production-ready application with improved architecture, state management, authentication, and upcoming AI-powered features.
-
-This reflects real-world development workflows: learn → refactor → extend → ship.
