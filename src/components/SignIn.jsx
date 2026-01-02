@@ -56,13 +56,11 @@ const Login = () => {
             })
             .catch((error) => {
               // An error occurred
-              // ...
             });
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          SetErrorMessage(errorCode + "-" + errorMessage);
+          SetErrorMessage(getFriendlyErrorMessage(errorCode));
         });
     } else {
       // sign In Logic
@@ -76,9 +74,35 @@ const Login = () => {
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          SetErrorMessage(errorCode + "-" + errorMessage);
+          SetErrorMessage(getFriendlyErrorMessage(errorCode));
         });
+    }
+  };
+
+  const getFriendlyErrorMessage = (errorCode) => {
+    switch (errorCode) {
+      case "auth/user-not-found":
+        return "User not found. Please check your email or Sign Up.";
+      case "auth/wrong-password":
+        return "Incorrect password. Please try again.";
+      case "auth/invalid-credential":
+        return "Invalid email or password. Please try again.";
+      case "auth/email-already-in-use":
+        return "Email already in use. Try signing in.";
+      case "auth/weak-password":
+        return "Password should be at least 6 characters.";
+      case "auth/invalid-email":
+        return "Invalid email address format.";
+      case "auth/too-many-requests":
+        return "Too many failed attempts. Please try again later.";
+      case "auth/network-request-failed":
+        return "Network error. Please check your connection.";
+      case "auth/invalid-api-key":
+      case "auth/api-key-not-found":
+      case "auth/configuration-not-found":
+        return "System configuration error. Please try again later.";
+      default:
+        return "Authentication failed. Please try again.";
     }
   };
 
