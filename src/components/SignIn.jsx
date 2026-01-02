@@ -24,8 +24,9 @@ const Login = () => {
   const handleButtonClick = () => {
     const emailValue = email.current?.value || "";
     const passwordValue = password.current?.value || "";
+    const nameValue = isSignIn ? undefined : name.current?.value;
 
-    const message = checkValidateData(emailValue, passwordValue);
+    const message = checkValidateData(emailValue, passwordValue, nameValue);
     SetErrorMessage(message);
 
     if (message) return;
